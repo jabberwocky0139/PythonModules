@@ -1,6 +1,8 @@
 
 使うときは
-.. highlight python::
-.. codeblock python::
 
-	sys.path.append("/home/jabberwocky/Dropbox/College/PythonModules/")
+.. code-block:: python
+
+   sys.path.append("/home/jabberwocky/Dropbox/College/PythonModules/")
+
+とかでモジュールのPathを通すこと. 
