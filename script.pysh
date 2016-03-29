@@ -1,0 +1,31 @@
+#-- script.pysh --#
+
+# coding: utf-8
+
+##### ファイル名は半角英数字とアンダースコア(_)を使うように
+
+filename = "for_test"
+
+##### setup.pyの出力
+f = open("setup.py","w")
+
+str = """
+##### setup.py
+
+from distutils.core import setup
+from distutils.extension import Extension
+from Cython.Distutils import build_ext
+
+ext_modules = [Extension('""" + filename + """', ['""" + filename + """.pyx'])]   #assign new.pyx module in setup.py.
+
+setup(name        = '""" + filename + """ app',cmdclass    = {'build_ext':build_ext},ext_modules = ext_modules)
+
+##### end
+"""
+
+f.write(str)
+f.close()
+
+#>sudo python3 setup.py build_ext
+#>sudo python3 setup.py install_lib
+#>sudo rm setup.py
